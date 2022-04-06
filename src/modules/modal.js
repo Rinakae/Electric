@@ -3,12 +3,13 @@ const modal = () => {
   const modalCallback = document.querySelector(".modal-callback");
   const modalOverlay = document.querySelector(".modal-overlay");
   const modalClose = document.querySelector(".modal-close");
+  const mobileMenu = document.querySelector(".mobile-menu");  
   
   callbackBtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-      
+    btn.addEventListener("click", () => {      
       modalCallback.style.display = "block";
-      modalOverlay.style.display = "block";      
+      modalOverlay.style.display = "block";  
+      mobileMenu.style.right = "-400px";    
     });
 
     modalClose.addEventListener("click", () => {
