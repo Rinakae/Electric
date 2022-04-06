@@ -1,7 +1,5 @@
 const menu = () => {
-  //<li><a href="#services">Цены на услуги</a></li>
-		//	<li><a href="#faq">Ответы на вопросы</a></li>
-			//<li><a href="#contacts">Контакты</a></li>
+  
     const topMenu = document.querySelector(".top-menu");
     const mobMenuBtn = document.querySelector(".mob-menu-btn");
     const mobileMenu = document.querySelector(".mobile-menu");
