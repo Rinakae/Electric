@@ -1,16 +1,24 @@
 {
   "name": "3dglo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {        
+  "scripts": {
     "build": "webpack",
     "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.70.0",
+    "webpack": "^5.71.0",
     "webpack-cli": "^4.9.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rinakae/Electric.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rinakae/Electric/issues"
+  },
+  "homepage": "https://github.com/Rinakae/Electric#readme",
+  "description": ""
 }
