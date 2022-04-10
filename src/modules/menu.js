@@ -5,17 +5,20 @@ const menu = () => {
     const mobileMenu = document.querySelector(".mobile-menu");
     const mobileMenuClose = document.querySelector(".mobile-menu-close");
 
-    mobMenuBtn.addEventListener("click", () => {      
+    mobMenuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       mobileMenu.style.right = "0px";      
     });
 
-    mobileMenuClose.addEventListener("click", () => {
+    mobileMenuClose.addEventListener("click", (e) => {
+      e.preventDefault();
       mobileMenu.style.right = "-400px";      
     });
 
     topMenu.addEventListener("click", (e) => {
+      e.preventDefault();
       if (e.target.closest('ul>li>a')) {
-        e.preventDefault();      
+        //e.preventDefault();      
         const anchor = e.target.getAttribute('href');        
         document.querySelector(anchor).scrollIntoView({
           behavior: 'smooth',
@@ -25,8 +28,9 @@ const menu = () => {
     });
 
     mobileMenu.addEventListener("click", (e) => {
+      e.preventDefault();
       if (e.target.closest('ul>li>a')) {
-        e.preventDefault();      
+        //e.preventDefault();      
         const anchor = e.target.getAttribute('href');        
         document.querySelector(anchor).scrollIntoView({
           behavior: 'smooth',

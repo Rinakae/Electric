@@ -3,6 +3,13 @@
 const slider = () => {
  
   const slides = document.querySelectorAll(".item");
+  const table = document.querySelectorAll(".top-slider .table");
+
+  table.forEach(item => {
+    item.style.visibility = "visible";
+    item.style.opacity = "1";
+
+  });
   
   let currentSlide = 0;
 
