@@ -15,29 +15,25 @@ const menu = () => {
       mobileMenu.style.right = "-400px";      
     });
 
-    topMenu.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (e.target.closest('ul>li>a')) {
-        //e.preventDefault();      
-        const anchor = e.target.getAttribute('href');        
+    function scroll(event) {
+      if (event.target.closest('ul>li>a')) {         
+        const anchor = event.target.getAttribute('href');        
         document.querySelector(anchor).scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
       }   
+    }
+
+    topMenu.addEventListener("click", (e) => {
+      e.preventDefault();
+      scroll(e);      
     });
 
     mobileMenu.addEventListener("click", (e) => {
       e.preventDefault();
-      if (e.target.closest('ul>li>a')) {
-        //e.preventDefault();      
-        const anchor = e.target.getAttribute('href');        
-        document.querySelector(anchor).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        mobileMenu.style.right = "-400px";
-      }   
+      scroll(e);      
+      mobileMenu.style.right = "-400px"; 
     });
 
 };
