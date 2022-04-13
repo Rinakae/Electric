@@ -10,11 +10,6 @@ const carousel = () => {
   let count = 1;
   let position = 0;
   
-  let i = 0;
-  for(let item of carousel.querySelectorAll('.col-sm-6')) {
-      item.style.position = 'relative';     
-      i++;
-    }
   left.addEventListener("click", (e) => {        
     position += width * count;      
     position = Math.min(position, 0);
@@ -22,9 +17,20 @@ const carousel = () => {
   });
 
   right.addEventListener("click", (e) => {
-    position -= width * count;      
-    position = Math.max(position, -width * (listElems.length - count));
-    list.style.marginLeft = position + 'px';     
+    let windowWidth = window.innerWidth;
+    position -= width * count;
+    
+    if (windowWidth < 995) {
+      position = Math.max(position, -width * (listElems.length - 1));
+      list.style.marginLeft = position + 'px';
+    } else if ((windowWidth > 995) && (windowWidth < 1250)) {
+      position = Math.max(position, -width * (listElems.length - 2));
+      list.style.marginLeft = position + 'px';
+    } else {
+      position = Math.max(position, -width * (listElems.length - 3));
+      list.style.marginLeft = position + 'px';
+    } 
+         
   }); 
  
 };

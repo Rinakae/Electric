@@ -4,17 +4,7 @@ const modal = () => {
   const modalOverlay = document.querySelector(".modal-overlay");
   const modalClose = document.querySelector(".modal-close");
   const mobileMenu = document.querySelector(".mobile-menu");
-  const imgWrapper = document.querySelectorAll(".img-wrapper");  
-  console.log(imgWrapper);
-
-  
-  imgWrapper.forEach(item => {
-    item.addEventListener("click", (e) => {
-      if ((e.offsetX < imgWrapper.offsetWidth) || (e.offsetY < imgWrapper.offsetHeight)) {
-    console.log("lgk");
-    }
-    });
-  });
+  const cards = document.querySelectorAll(".col-sm-6");   
   
   function openModal() {
     modalCallback.style.display = "block";
@@ -42,6 +32,13 @@ const modal = () => {
   modalOverlay.addEventListener("click", (e) => { 
     e.preventDefault();     
     closeModal(); 
+  });
+
+  cards.forEach(card => {
+    card.addEventListener("click", (e) => {
+      e.preventDefault();            
+      openModal();
+    });
   });
 
  
